@@ -6,4 +6,4 @@ You can launch it as you start Windows following [these steps](https://www.autoh
 
 ## Features
 + Mouse scroll up/down on the taskbar to change volume.
-+ Mouse scroll down on window title bar to minimize. (***missing for now***)
++ Mouse scroll down on window title bar to minimize.
