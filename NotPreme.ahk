@@ -17,12 +17,25 @@ DetectTitleBar( )
 	MouseGetPos, mouse_x, mouse_y
 	WinGetPos win_x, win_y, win_width, win_height, A
 
-	if (mouse_y > win_y and mouse_y < win_y + ws_MinHeight){
-		return true 
+	if(isWindowFullScreen() != true)
+	{
+		if (mouse_y > win_y and mouse_y < win_y + ws_MinHeight){
+			return true 
+		}
+		else{
+			return false
+		}
 	}
-	else{
-		return false
-	}
+}
+
+isWindowFullScreen()
+{
+    WinGet, style, Style, A
+    ; 0x800000 is WS_BORDER.
+    ; 0x20000000 is WS_MINIMIZE.
+    ; no border and not minimized
+    retVal := (style & 0x20800000) ? 0 : 1
+    Return, retVal
 }
 
 MouseIsOver(WinTitle) {
