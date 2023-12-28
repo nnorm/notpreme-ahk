@@ -19,8 +19,14 @@ DetectTitleBar( )
 
 	if(isWindowFullScreen() != true)
 	{
-		if (mouse_y > win_y and mouse_y < win_y + ws_MinHeight){
-			return true 
+		if(mouse_x > win_x and mouse_x < win_x + win_width)
+		{
+			if (mouse_y > win_y and mouse_y < win_y + ws_MinHeight){
+				return true 
+			}
+			else{
+				return false
+			}
 		}
 		else{
 			return false
